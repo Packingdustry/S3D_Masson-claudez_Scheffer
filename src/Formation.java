@@ -41,6 +41,14 @@ public class Formation {
         this.matEnseign.remove(matiere);
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public HashMap<String, Double> getMatEnseign() {
+        return matEnseign;
+    }
+
     /**
      * Renvoie le coeff associé à une matière. Si elle n'existe pas, renvoie null
      * @param matiere matière dont on cherche le coeff
