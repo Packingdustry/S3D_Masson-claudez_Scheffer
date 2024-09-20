@@ -96,4 +96,31 @@ public class Etudiant {
         }
         return moy/div;
     }
+
+    /**
+     * Getter ID
+     * @return Identite
+     */
+
+    public Identite getId() {
+        return id;
+    }
+
+    /**
+     * Getter formation
+     * @return Formation
+     */
+
+    public Formation getFormation() {
+        return formation;
+    }
+
+    /**
+     *Getter Map
+     * @return Map
+     */
+
+    public Map<String, ArrayList<Double>> getResultat() {
+        return resultat;
+    }
 }
