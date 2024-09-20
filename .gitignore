@@ -2,8 +2,6 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-.idea
-S3D_Masson-claudez_Scheffer.iml
 
 ### Eclipse ###
 .apt_generated
