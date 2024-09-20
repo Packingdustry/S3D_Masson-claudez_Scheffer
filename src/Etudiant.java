@@ -34,7 +34,7 @@ public class Etudiant {
      */
     public void ajouterNote(String n, double note) throws NoteException, FormationException {
         if(note>0 && note<=20){
-            if(this.formation.accesCoef(n)!=null){
+            if(this.formation.accesCoeff(n)!=null){
                 if(!resultat.containsKey(n)){
                     ArrayList<Double> a = new ArrayList<Double>();
                     a.add(note);
@@ -46,7 +46,7 @@ public class Etudiant {
                 throw new FormationException(n + "\nCette matière n'est pas dans la formation.");
             }
         }else{
-            throw new NoteException(String.valueOf(note) + "\nCette note n'est pas entre 0 et 20.")
+            throw new NoteException(String.valueOf(note) + "\nCette note n'est pas entre 0 et 20.");
         }
     }
 
@@ -60,7 +60,7 @@ public class Etudiant {
      */
     public double calculerMoyen(String nom) throws FormationException {
         double moy = 0;
-        if(this.formation.accesCoef(nom)!=null){
+        if(this.formation.accesCoeff(nom)!=null){
             if(resultat.containsKey(nom)){
                 ArrayList<Double> notes = resultat.get(nom);
                 for(int i =0;i<notes.size();i++){
@@ -90,7 +90,7 @@ public class Etudiant {
         Iterator<String> it = c.iterator();
         while(it.hasNext()){
             String nom = it.next();
-            double coef = this.formation.accesCoef(nom);
+            double coef = this.formation.accesCoeff(nom);
             div +=coef;
             moy += calculerMoyen(nom) * coef;
         }
