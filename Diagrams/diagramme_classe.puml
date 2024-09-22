@@ -1,0 +1,59 @@
+@startuml
+class Etudiant {
+    - resultat : Map<String, ArrayList<Double>>
+    + Etudiant(Identite, Formation)
+    + ajouterNote(matiere : String, note : double)
+    + calculerMoyen(nom : String) : double
+    + moyGenerale() : double
+}
+
+class Formation {
+    - id : String
+    - matEnseign : Map<String, Double>ù
+    + Formation(nom : String)
+    + ajouter(matiere : String, coeff : double)
+    + modifier(matiere : String, coeff : double)
+    + supprimer(matiere : String)
+    + getId() : String
+    + getMatEnseign() : Map<String, Double>
+    + accesCoeff(matiere : String) : Double
+}
+
+class Identite {
+    - NIP : String
+    - nom : String
+    - prenom : String
+    + Identite(NIP : String, n : String, p : String)
+    + equals(Object) : boolean
+}
+
+class Groupe {
+    + Groupe(Formation)
+    + adjEtu(Etudiant)
+    + suppEtu(Etudiant)
+    + moyGroupe(matiere : String) : double
+    + moyGeneraleGroupe() : double
+    + triAlpha()
+    + triAntiAlpha()
+    + triParMerite()
+}
+
+class triAlpha implements Comparator {
+    + compare(Etudiant, Etudiant)
+}
+class triAntiAlpha implements Comparator{
+    + compare(Etudiant, Etudiant)
+}
+class triParMerite implements Comparator{
+    + compare(Etudiant, Etudiant)
+}
+
+exception FormationException extends Exception
+exception NoteException extends Exception
+
+'relations :
+Etudiant "*" --> "1" Formation : - formation
+Etudiant "1" --> "1" Identite : - identite
+Groupe "1" --> "*" Etudiant : - etudiants
+Groupe "*" --> "1" Formation : - formation
+@enduml

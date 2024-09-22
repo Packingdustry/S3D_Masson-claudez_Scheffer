@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class Formation {
     /**
@@ -6,7 +7,7 @@ public class Formation {
      * matEnseign : hashMap associant les matières de la formation à leurs coefficients.
      */
     private String id;
-    private HashMap<String, Double> matEnseign;
+    private Map<String, Double> matEnseign;
 
     public Formation(String nom) {
         this.id = nom;
@@ -45,7 +46,7 @@ public class Formation {
         return id;
     }
 
-    public HashMap<String, Double> getMatEnseign() {
+    public Map<String, Double> getMatEnseign() {
         return matEnseign;
     }
 
