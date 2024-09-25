@@ -11,6 +11,12 @@ class FormationTest {
 
     }
     @Test
+    void initialistion(){
+        Formation f = new Formation("1");
+        assertTrue(f.getMatEnseign().isEmpty());
+    }
+
+    @Test
     void ajouter() {
         //test d'ajout simple
         f.ajouter("Math",1);
