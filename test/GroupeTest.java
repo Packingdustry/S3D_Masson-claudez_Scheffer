@@ -33,7 +33,9 @@ class GroupeTest {
         Etudiant e1 = new Etudiant(new Identite("001","sch","Benj"),f);
         Etudiant e2 = new Etudiant(new Identite("002","sch","Benj"),new Formation("GE2I"));
         g.adjEtu(e1);
+        Etudiant e = g.getEtudiants().get(0);
+        assertEquals(e,e1);
         g.suppEtu(e1);
-        EtudiantException e = assertThrows(EtudiantException.class,()->g.suppEtu(e2));
+        EtudiantException e3 = assertThrows(EtudiantException.class,()->g.suppEtu(e2));
     }
 }
