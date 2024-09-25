@@ -58,4 +58,23 @@ public class Formation {
     public Double accesCoeff(String matiere) {
         return matEnseign.get(matiere);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        boolean res = true;
+        Formation f = (Formation) o;
+        if (!this.id.equals(f.getId())) {
+            return false;
+        } else {
+            if (matEnseign.size() != f.getMatEnseign().size()) {
+                return false;
+            }
+            for (String matiere: matEnseign.keySet()) {
+                if (!matEnseign.get(matiere).equals(f.getMatEnseign().get(matiere))) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }
