@@ -91,8 +91,10 @@ public class Etudiant {
         while(it.hasNext()){
             String nom = it.next();
             double coef = this.formation.accesCoeff(nom);
-            div +=coef;
-            moy += calculerMoyen(nom) * coef;
+            if(calculerMoyen(nom)!=-1){
+                div +=coef;
+                moy += calculerMoyen(nom) * coef;
+            }
         }
         return moy/div;
     }
