@@ -26,7 +26,11 @@ public class Groupe {
      * supprime l'étudiant passé en paramètre du Groupe
      * @param etu etudiant à supprimer
      */
-    public void suppEtu(Etudiant etu) {
-        etudiants.remove(etu);
+    public void suppEtu(Etudiant etu) throws EtudiantException {
+        if (etudiants.contains(etu)) {
+            etudiants.remove(etu);
+        } else {
+            throw new EtudiantException("L'étudiant n'est pas dans le groupe. ");
+        }
     }
 }
