@@ -21,4 +21,12 @@ public class Groupe {
             throw new FormationException("L'étudiant n'est pas dans la formation du groupe. ");
         }
     }
+
+    /**
+     * supprime l'étudiant passé en paramètre du Groupe
+     * @param etu etudiant à supprimer
+     */
+    public void suppEtu(Etudiant etu) {
+        etudiants.remove(etu);
+    }
 }
