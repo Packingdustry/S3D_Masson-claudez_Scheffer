@@ -17,18 +17,19 @@ class GroupeTest {
         this.g = new Groupe(f);
     }
     @Test
-    public void testAjout(){
+    public void testAjout() throws FormationException {
         Etudiant e1 = new Etudiant(new Identite("001","sch","Benj"),f);
         Etudiant e2 = new Etudiant(new Identite("002","sch","Benj"),new Formation("GE2I"));
         g.adjEtu(e1);
-
+        Etudiant e = g.getEtudiants().get(0);
+        assertEquals(e,e1);
         FormationException f = assertThrows(
                 FormationException.class , ()->  g.adjEtu(e2)
         );
     }
 
     @Test
-    public void testSupr(){
+    public void testSupr() throws FormationException, EtudiantException {
         Etudiant e1 = new Etudiant(new Identite("001","sch","Benj"),f);
         Etudiant e2 = new Etudiant(new Identite("002","sch","Benj"),new Formation("GE2I"));
         g.adjEtu(e1);

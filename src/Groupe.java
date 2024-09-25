@@ -33,4 +33,12 @@ public class Groupe {
             throw new EtudiantException("L'étudiant n'est pas dans le groupe. ");
         }
     }
+
+    public Formation getFormation() {
+        return formation;
+    }
+
+    public List<Etudiant> getEtudiants() {
+        return etudiants;
+    }
 }
