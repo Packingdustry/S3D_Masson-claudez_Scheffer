@@ -41,4 +41,18 @@ public class Groupe {
     public List<Etudiant> getEtudiants() {
         return etudiants;
     }
+
+    /**
+     * trie la liste d'étudiants dans l'ordre alphabétique.
+     */
+    public void triALpha() {
+        this.etudiants.sort(new TriAlpha());
+    }
+
+    /**
+     * trie la liste d'étudiants dans l'ordre alphabétique inverse (de Z à A).
+     */
+    public void triAntiAlpha() {
+        this.etudiants.sort(new TriAntiAlpha());
+    }
 }

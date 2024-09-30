@@ -18,6 +18,14 @@ public class Identite {
         this.prenom = p;
     }
 
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
     /**
      * Methode equals qui retourne true si le NIP le nom et le prenom sont egaux
      * a l'objet passer en parametre
