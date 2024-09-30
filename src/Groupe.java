@@ -41,4 +41,35 @@ public class Groupe {
     public List<Etudiant> getEtudiants() {
         return etudiants;
     }
+
+    public double moyGroupe(String name) throws FormationException {
+        double moyenne = 0;
+        int diviseur = etudiants.size();
+        if(!etudiants.isEmpty()){
+            if(formation.accesCoeff(name)!=null){
+                for(int i = 0 ;i<etudiants.size();i++){
+                    if(etudiants.get(i).calculerMoyen(name) == -1){
+                        diviseur--;
+                    }else{
+                        moyenne += etudiants.get(i).calculerMoyen(name);
+                    }
+                }
+            }else{
+                throw new FormationException("La matiere n'est pas dans la formation");
+            }
+        }else{
+            throw new IllegalAccessError("La liste est vide");
+        }
+        return moyenne/diviseur;
+    }
+
+    public double moyGeneral() throws FormationException {
+        double moyenne = 0 ;
+        if(!etudiants.isEmpty()){
+            for(int i = 0 ;i<etudiants.size();i++){
+                moyenne += etudiants.get(i).moyGeneral();
+            }
+        }
+        return moyenne/etudiants.size();
+    }
 }

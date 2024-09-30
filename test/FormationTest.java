@@ -24,6 +24,7 @@ class FormationTest {
         //test d'ajout de la meme matière le coef est censé etre le meme que le premier
         f.ajouter("Math",2);
         assertEquals(f.getMatEnseign().get("Math"),1.00);
+        //CoefException c = assertThrows(CoefException.class,()->f.ajouter("Anglais",-3));
     }
 
     @Test
