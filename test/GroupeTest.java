@@ -20,49 +20,34 @@ class GroupeTest {
        e.ajouterNote("Dev web",10);
        e.ajouterNote("Dev web",11);
        e.ajouterNote("Dev web",15);
-        System.out.println("###################Dev web#####################");
-        System.out.println(e.calculerMoyen("Dev web"));
+
        e.ajouterNote("Reseau",12);
        e.ajouterNote("Reseau",10);
        e.ajouterNote("Reseau",11);
-        System.out.println("###################Reseau#####################");
-        System.out.println(e.calculerMoyen("Reseau"));
+
        e.ajouterNote("Algo",9);
        e.ajouterNote("Algo",8);
        e.ajouterNote("Algo",10);
-        System.out.println("###################Algo#####################");
-        System.out.println(e.calculerMoyen("Algo"));
-        System.out.println("###################Moyenne generale#####################");
-        System.out.println(e.moyGeneral());
+
        e1.ajouterNote("Dev web",9);
        e1.ajouterNote("Dev web",8);
        e1.ajouterNote("Dev web",10);
-        System.out.println("###################Dev web#####################");
-        System.out.println(e1.calculerMoyen("Dev web"));
+
         e1.ajouterNote("Reseau",9);
         e1.ajouterNote("Reseau",8);
         e1.ajouterNote("Reseau",10);
-        System.out.println("###################Reseau#####################");
-        System.out.println(e1.calculerMoyen("Reseau"));
-        System.out.println("###################Moyenne generale#####################");
-        System.out.println(e1.moyGeneral());
+
         e2.ajouterNote("Dev web",12);
         e2.ajouterNote("Dev web",10);
         e2.ajouterNote("Dev web",11);
-        System.out.println("###################Dev web#####################");
-        System.out.println(e2.calculerMoyen("Dev web"));
+
         e2.ajouterNote("Reseau",12);
         e2.ajouterNote("Reseau",10);
         e2.ajouterNote("Reseau",11);
-        System.out.println("###################Reseau#####################");
-        System.out.println(e2.calculerMoyen("Reseau"));
+
         e2.ajouterNote("Algo",9);
         e2.ajouterNote("Algo",8);
         e2.ajouterNote("Algo",10);
-        System.out.println("###################Algo#####################");
-        System.out.println(e2.calculerMoyen("Algo"));
-        System.out.println("###################Moyenne generale#####################");
-        System.out.println(e2.moyGeneral());
         g.adjEtu(e);
         g.adjEtu(e1);
         g.adjEtu(e2);
