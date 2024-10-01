@@ -101,9 +101,9 @@ class GroupeTest {
         assertEquals(e1, g.getEtudiants().get(2));
 
         g.triAntiAlpha();
-        assertEquals(e1, g.getEtudiants().get(2));
+        assertEquals(e1, g.getEtudiants().get(0));
         assertEquals(e, g.getEtudiants().get(1));
-        assertEquals(e2, g.getEtudiants().get(0));
+        assertEquals(e2, g.getEtudiants().get(2));
 
     }
 }
