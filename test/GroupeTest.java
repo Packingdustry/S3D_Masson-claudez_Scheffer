@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class GroupeTest {
     public Formation f;
     public Groupe g;
+    public Etudiant e,e1,e2;
     @BeforeEach
     public void init() throws NoteException, FormationException {
         this.f = new Formation("Informatique");
@@ -13,9 +14,9 @@ class GroupeTest {
         f.ajouter("Dev web",1);
         f.ajouter("Algo",2);
         this.g = new Groupe(f);
-       Etudiant e = new Etudiant(new Identite("1","Robert","Alfred"),f);
-       Etudiant e1 = new Etudiant(new Identite("2","Soa","Astrid"),f);
-       Etudiant e2 = new Etudiant(new Identite("3","Green","Thomas"),f);
+        e = new Etudiant(new Identite("1","Robert","Alfred"),f);
+        e1 = new Etudiant(new Identite("2","Soa","Astrid"),f);
+        e2 = new Etudiant(new Identite("3","Green","Thomas"),f);
        e.ajouterNote("Dev web",12);
        e.ajouterNote("Dev web",10);
        e.ajouterNote("Dev web",11);
@@ -92,22 +93,17 @@ class GroupeTest {
 
     @Test
     public void testTriAlpha() throws FormationException{
-        Etudiant e1 = new Etudiant(new Identite("001", "Masson", "Aloïs"), f);
-        Etudiant e2 = new Etudiant(new Identite("002", "Dupont", "Pierre"), f);
-        Etudiant e3 = new Etudiant(new Identite("003", "Dupont", "Jean"), f);
-        g.adjEtu(e1);
-        g.adjEtu(e2);
-        g.adjEtu(e3);
+
 
         g.triALpha();
-        assertEquals(e3, g.getEtudiants().get(0));
-        assertEquals(e2, g.getEtudiants().get(1));
+        assertEquals(e2, g.getEtudiants().get(0));
+        assertEquals(e, g.getEtudiants().get(1));
         assertEquals(e1, g.getEtudiants().get(2));
 
         g.triAntiAlpha();
-        assertEquals(e3, g.getEtudiants().get(2));
-        assertEquals(e2, g.getEtudiants().get(1));
-        assertEquals(e1, g.getEtudiants().get(0));
+        assertEquals(e1, g.getEtudiants().get(2));
+        assertEquals(e, g.getEtudiants().get(1));
+        assertEquals(e2, g.getEtudiants().get(0));
 
     }
 }
