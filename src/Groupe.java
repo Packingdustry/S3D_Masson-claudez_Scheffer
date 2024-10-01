@@ -72,4 +72,18 @@ public class Groupe {
         }
         return moyenne/etudiants.size();
     }
+
+    /**
+     * trie la liste d'étudiants dans l'ordre alphabétique.
+     */
+    public void triALpha() {
+        this.etudiants.sort(new TriAlpha());
+    }
+
+    /**
+     * trie la liste d'étudiants dans l'ordre alphabétique inverse (de Z à A).
+     */
+    public void triAntiAlpha() {
+        this.etudiants.sort(new TriAntiAlpha());
+    }
 }

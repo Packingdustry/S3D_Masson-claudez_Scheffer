@@ -104,4 +104,25 @@ class GroupeTest {
         double d = g.moyGeneral();
         assertEquals(d,9.75);
     }
+
+    @Test
+    public void testTriAlpha() throws FormationException{
+        Etudiant e1 = new Etudiant(new Identite("001", "Masson", "Aloïs"), f);
+        Etudiant e2 = new Etudiant(new Identite("002", "Dupont", "Pierre"), f);
+        Etudiant e3 = new Etudiant(new Identite("003", "Dupont", "Jean"), f);
+        g.adjEtu(e1);
+        g.adjEtu(e2);
+        g.adjEtu(e3);
+
+        g.triALpha();
+        assertEquals(e3, g.getEtudiants().get(0));
+        assertEquals(e2, g.getEtudiants().get(1));
+        assertEquals(e1, g.getEtudiants().get(2));
+
+        g.triAntiAlpha();
+        assertEquals(e3, g.getEtudiants().get(2));
+        assertEquals(e2, g.getEtudiants().get(1));
+        assertEquals(e1, g.getEtudiants().get(0));
+
+    }
 }
