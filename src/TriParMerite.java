@@ -20,9 +20,9 @@ public class TriParMerite implements Comparator<Etudiant> {
 
         int res = 0;
         if (moy1 < moy2) {
-            res = -1;
-        } else if (moy1 > moy2) {
             res = 1;
+        } else if (moy1 > moy2) {
+            res = -1;
         }
         return res;
     }
