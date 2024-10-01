@@ -86,4 +86,11 @@ public class Groupe {
     public void triAntiAlpha() {
         this.etudiants.sort(new TriAntiAlpha());
     }
+
+    /**
+     * trie la liste d'étudiants dans l'ordre de leurs résultats.
+     */
+    public void triParMerite() {
+        this.etudiants.sort(new TriParMerite());
+    }
 }
