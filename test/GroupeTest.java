@@ -106,4 +106,11 @@ class GroupeTest {
         assertEquals(e2, g.getEtudiants().get(2));
 
     }
+    @Test
+    public void testMerite() throws FormationException {
+        g.triParMerite();
+        assertEquals(e,g.getEtudiants().get(0));
+        assertEquals(e2,g.getEtudiants().get(1));
+        assertEquals(e1,g.getEtudiants().get(2));
+    }
 }
